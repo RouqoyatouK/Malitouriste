@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>commentaire</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row " style="margin-top: 20px ;">
+    <div class="row detailregion" >
+    <div class="col col-lg-6" > <img  style="width: 100%;" [src]='image' alt=""></div>
+
+    <div class="col col-lg-6">
+
+      <div class="row" style="color: #fff; text-align: center;">
+        <h1 style="margin-bottom: 70px;" >{{nom}}</h1>
+        <p >{{superfie}}</p>
+        <p style="margin-top: 50px;">Pour les iconne sup et modifier</p>
+      </div>
+    </div>
+
+    </div><br><br>
+
+        <!--formulaire commentaire-->
+
+
+    <div class="row" style="margin-top: 40px; margin-bottom:60px ;">
+
+      <div class="col col-lg-12 cmtform">
+        <form>
+          <div class="form-group">
+            <!-- <label for="exampleInputEmail1" id="LNUC">Laisser nous un commentaire</label><br> -->
+            <h3 id="LNUC">Laisser nous un commentaire</h3>
+            <input type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Commentaire.." name="message" [(ngModel)]="message"> <br>
+          </div>
+
+          <button type="submit" class="btn btn-primary" (click)="AjouterLeComment()">Submit</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!--afficher commentaire-->
+
+    <div class="row cmt" >
+
+      <div class="col col-lg-2 col-sm-2" ><img class="rounded-circle" alt="avatar1" style="width: 50px;" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" />
+      </div>
+      <div class="col col-lg-2 col-sm-2" ><h1>Roocky</h1></div>
+      <div class="col col-lg-2 col-sm-2" ></div>
+      <div class="col col-lg-2 col-sm-2" ></div>
+      <div class="col col-lg-4 col-sm-4"><h1>le 23-12-2002</h1></div>
+
+      <div class="col col-lg-12 col-sm-12"><h3>je pense que c'est top quoi trop meme</h3></div>
+    </div>
+
+  </div>
+</ion-content>

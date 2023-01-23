@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</ion-header>
+
+<ion-content >
+
+
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+<!--form-->
+        <form class="login"  *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate>
+
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
+            <input class="login__input" placeholder="nom d'utilisateur" type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && username.errors }">
+<!--kkkkkkkkkkkkkkkkkkkkkkkkkkkkk-->
+
+            <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+              Username is required!
+            </div>
+
+
+
+
+
+          </div>
+          <div class="login__field">
+            <i class="login__icon fas fa-lock"></i>
+            <input class="login__input" placeholder="mot de passe"  type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+            <!--kkkkkkkkkkkkkkkkkkkkkkkkkkkkk-->
+
+            <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+              <div *ngIf="password.errors['required']">Password is required</div>
+              <div *ngIf="password.errors['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+          <button class="button login__submit">
+            <span class="button__text">Connexion</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>
+
+          <div class="form-group">
+            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+              Login failed: {{ errorMessage }}
+            </div>
+          </div>
+        </form>
+
+        <div class="alert alert-success" *ngIf="isLoggedIn">
+          Logged in as {{ roles }}.
+        </div>
+
+        <div class="social-login">
+          <h3>S'inscrire</h3>
+          <div class="social-icons">
+            <a href="#" class="social-login__icon fab fa-instagram"></a>
+            <a href="#" class="social-login__icon fab fa-facebook"></a>
+            <a href="#" class="social-login__icon fab fa-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

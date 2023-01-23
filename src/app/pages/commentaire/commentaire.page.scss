@@ -1,0 +1,32 @@
+.cmt{
+  border: 1px solid gray;
+}
+
+
+.detailregion{
+  background-color: #a36c47;
+
+  padding: 20px 50px 20px 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px gray;
+}
+
+#LNUC{
+  //text-decoration: underline;
+  text-align: center;
+
+}
+
+//formulaire
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 4.375rem .75rem !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+
+}

@@ -1,0 +1,220 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Region</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class=" buttonpan mx-auto d-block mt-5">
+  <div class="row" style="margin-top: 20px;">
+    <!--premier button pays-->
+  <div class="col col-lg-6 col-md-6 col-md-6 col-sd-6 ">
+    <div>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Ajouter Pays
+            </button>
+
+          <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form >
+                      <input type="text" name="nompays" [(ngModel)]="nompays">
+                      <br>
+                      <input type="text" name="supperficie" [(ngModel)]="supperficie">
+                      <button type="button" class="btn btn-primary" (click)="AjoutduPays()">Envoyer</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+   </div>
+
+
+
+    <!--boutton deux Nom region-->
+  <div class="col col-lg-6 col-md-6 col-md-6 col-sd-6 ">
+      <div>
+          <!-- Button trigger modal -->
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Ajouter NomRegion</button> -->
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Ajouter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+<form >
+
+  <div class="form-group">
+    <label for="imageregion">Image Region</label>
+    <input type="file" class="form-control" id="" placeholder="imageregion" (change)="Recupererlimage($event)" multiple required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nom region</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="nom" [(ngModel)]="nom">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Superficie</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="superfie" [(ngModel)]="superfie">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Coderegion</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="coderegion" [(ngModel)]="coderegion">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Activite</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="activite" [(ngModel)]="activite">
+  </div>
+
+  <div class="form-group" >
+    <label for="exampleFormControlSelect1">Pays</label>
+    <!-- <select class="form-control" id="exampleFormControlSelect1 " *ngFor="let plist of paysliste">
+      <option>payslis</option>
+      <option>payslis</option>
+      <option>payslis</option>
+    </select> -->
+    <select class="form-control form-control-sm" name="pays" [(ngModel)]="pays">
+      <option  *ngFor="let plist of paysliste" value="{{plist.nompays}}">{{plist.nompays}}</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" (click)="AjouterLeNomRegion()">ENvoyer</button>
+</form>
+</div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hide this modal and show the first with the button below.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<a class="btn btn-primary " data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ajouter NomRegion</a>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <input type="text">
+          <input type="text">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+</div>
+</div>
+    <!--button trois date-->
+  <!-- <div class="col col-lg-4 col-md-4 col-md-4 col-sd-4 ">
+    <div> -->
+
+      <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajout Annee</button>
+
+ Modal
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <input type="date" name="date" [(ngModel)]="date"><br>
+
+          <button type="button" class="btn btn-primary" (click)="AjoutDuAnne()">Save</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+    <!-- </div>
+  </div> -->
+  </div>
+
+  <!--row-->
+
+    <div class="formregion mx-auto d-block mt-5">
+    <div class="row  mx-auto " >
+    <div class="col-md-6"  >
+      <div>
+        <img src="../../../assets/add.gif" alt="">
+      </div>
+
+    </div>
+    <div class=" col-md-6 mx-auto d-block mt-5"  >
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Habitants</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="habitants" [(ngModel)]="habitants">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Region</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="nomrg" [(ngModel)]="nomrg">
+              <option *ngFor="let affr of afficherRegion" value="{{affr.nom}}">{{affr.nom}}</option>
+
+            </select>
+          </div><br>
+          <button type="submit" class="btn btn-primary" (click)="AjouterDeRegion()">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  </div>
+
+
+</ion-content>
